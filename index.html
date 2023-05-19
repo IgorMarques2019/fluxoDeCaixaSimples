@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./src/scss/index/index.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="shortcut icon" href="./cash.ico" type="image/x-icon">
+
+  <meta property="og:title" content="Fluxo de Caixa">
+  <meta property="og:description" content=" Fluxo de caixa simples que oferece uma maneira fácil de gerenciar suas finanças. Com recursos de gráficos interativos, você pode visualizar suas entradas e saídas de forma clara e intuitiva. Além disso, todas as suas informações são armazenadas em um banco de dados local, garantindo a segurança e privacidade dos seus dados financeiros. Experimente agora e tenha o controle total das suas finanças.">
+  <meta property="og:image" content="https://cdn.3dtuman.com/hentai/20221117/klg1on1un5m.png">
+  <meta property="og:type" content="website">
+
+
+  <title>Fluxo de Caixa - Igor Marques</title>
+</head>
+
+<body>
+  <div class="container-modal">
+    <div id="modal_lancamento">
+      <div id="header-modal">
+        <h2>Novo Lançamento</h2>
+        <div id="header-buttons">
+          <button id="saveLancamento">Salvar</button>
+          <button id="closeModal">Fechar</button>
+        </div>
+      </div>
+
+      <div id="area-lancamento">
+        <div id="label_lancamento">
+          <label for="titleLancamento">Lançamento</label>
+          <input type="text" id="titleLancamento" placeholder="Digite aqui...">
+        </div>
+
+        <div id="label_tipoLancamento">
+          <div class="lancamento_tipo">
+            <label for="valorLancamento">R$</label>
+            <input min="0" type="number" name="" id="valorLancamento" placeholder="R$">
+          </div>
+
+          <div class="lancamento_tipo">
+            <label for="categoria">Categoria</label>
+            <select name="" id="categoria">
+              <option selected value="Entrada">Entrada</option>
+              <option value="Saida">Saida</option>
+            </select>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+  </div>
+  <header>
+    <div class="container">
+      <h2><a href="index.html">Fluxo de Caixa</a></h2>
+      <button>Novo Lançamento</button>
+
+      <img src="./src/img/icons/menu_closed.svg">
+    </div>
+  </header>
+  <canvas id="myChart"></canvas>
+  <div id="info-saldo">
+    <div class="info-saldo-container">
+      <p id="entrada-saldo">R$ 00,00</p>
+      <p id="saida-saldo">R$ 00,00</p>
+      <p id="diferenca-saldo">R$ 00,00</p>
+    </div>
+  </div>
+
+
+  <div class="container-table">
+    <table id="tabela">
+      <thead>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Categoria</th>
+      </thead>
+
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="seu_script.js"></script>
+
+  <button id="cleanBtn" onclick="cleanData()"><i class="fa-solid fa-trash-can"></i></button>
+  <footer></footer>
+  <script src="./src/js/index.js"></script>
+</body>
+
+</html>

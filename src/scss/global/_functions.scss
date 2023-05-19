@@ -1,0 +1,23 @@
+@mixin container {
+  max-width: 1580px;
+  margin: 0 auto;
+}
+@mixin buttons {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+@mixin flex(
+  $display,
+  $flex_direction,
+  $flex_wrap,
+  $align_itens,
+  $justify_content
+) {
+  display: $display;
+  flex-direction: $flex_direction;
+  flex-wrap: $flex_wrap;
+  align-items: $align_itens;
+  justify-content: $justify_content;
+}

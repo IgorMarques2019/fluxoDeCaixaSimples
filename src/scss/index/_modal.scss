@@ -1,0 +1,181 @@
+
+body > .showModal{
+  animation:showModal .5s forwards;
+}
+.container-modal{
+  padding: 20px;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background-color: rgba(13, 13, 13, 0.806);
+  backdrop-filter: blur(2px);
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  #modal_lancamento {
+    max-width: 1044px;
+    width: 100%;
+    border: 1px solid $blue-02;
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    #header-modal {
+      @include flex(flex, row, nowrap, center, space-between);
+      h2 {
+        color: $blue-01;
+        font-weight: 600;
+      }
+
+      #header-buttons {
+        #closeModal {
+          @include buttons();
+          background-color: $red-01;
+          color: white;
+          &:hover {
+            background-color: $red-02;
+          }
+        }
+
+        #saveLancamento {
+          @include buttons;
+          margin: 0 auto;
+          background-color: $green-01;
+          &:hover {
+            background-color: $green-02;
+          }
+          color: white;
+        }
+      }
+    }
+    > #header-buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      width: 100%;
+
+      button {
+        flex: 1;
+      }
+      #closeModal {
+        @include buttons();
+        background-color: $red-01;
+        color: white;
+        &:hover {
+          background-color: $red-02;
+        }
+      }
+
+      #saveLancamento {
+        @include buttons;
+        margin: 0 auto;
+        background-color: $green-01;
+        &:hover {
+          background-color: $green-02;
+        }
+        color: white;
+      }
+    }
+    #area-lancamento {
+      width: 100%;
+      margin-top: 20px;
+      @include flex(flex, column, nowrap, stretch, center);
+      gap: 10px;
+
+      #label_lancamento {
+        @include flex(flex, column, nowrap, flex-start, center);
+        width: 100%;
+        gap: 5px;
+
+        label {
+          color: $text-bold;
+          font-weight: 700;
+          font-size: 18px;
+        }
+
+        input {
+          @include buttons();
+          background-color: $gray-01;
+          width: 100%;
+        }
+      }
+
+      #label_tipoLancamento {
+        @include flex(flex, row, nowrap, center, space-between);
+        gap: 20px;
+
+        .lancamento_tipo {
+          flex: 1;
+
+          label {
+            color: $text-bold;
+            font-weight: 700;
+            font-size: 18px;
+          }
+          input {
+            @include flex(flex, column, nowrap, flex-start, center);
+            @include buttons();
+            background-color: $gray-01;
+            width: 100%;
+          }
+
+          select {
+            @include buttons();
+            background-color: $gray-01;
+            width: 100%;
+
+            option {
+              display: block;
+              padding: 10px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .container-modal {
+    #modal_lancamento {
+      padding: 20px;
+      #header-modal {
+        h2 {
+          font-size:20px;
+          text-align: center;
+          width: 100%;
+          font-weight:700;
+        }
+      }
+    }
+  }
+}
+
+@keyframes showModal {
+  from {
+    top:-100%;
+  }
+
+  to {
+    top:0;
+  }
+}
+
+@keyframes closeModal {
+  from {
+    top:0;
+  }
+  
+  to {
+    top:-100%;
+  }
+}
+

@@ -1,0 +1,31 @@
+#info-saldo {
+  padding: 20px;
+  width: 100%;
+  .info-saldo-container {
+    border-radius: 5px;
+    overflow: hidden;
+    @include flex(flex, row, wrap, center, space-between);
+    max-width: 1580px;
+    margin: 10px auto;
+    border-radius: 5px;
+    overflow: hidden;
+
+    p {
+      text-align: center;
+      padding: 10px;
+      flex: 1;
+      color: white;
+      font-size: 14px;
+    }
+
+    p#entrada-saldo {
+      background-color: $green-01;
+    }
+    p#saida-saldo {
+      background-color: $red-01;
+    }
+    p#diferenca-saldo {
+      background-color: $gray-02;
+    }
+  }
+}

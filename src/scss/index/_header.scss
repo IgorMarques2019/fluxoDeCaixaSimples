@@ -1,0 +1,82 @@
+
+header {
+  width:100%;
+  background-color: $blue-01;
+  padding: 20px;
+  position:sticky;
+  top:0;
+  left:0;
+
+  .container {
+    @include flex(flex, row, wrap, center, space-between);
+    @include container;
+    h2 {
+      a {
+        color: $white;
+      }
+    }
+
+    button {
+      @include buttons;
+      background-color: $yellow-01;
+      color: $white;
+      transition: background-color 0.4s;
+      font-weight: 700;
+      cursor: pointer;
+      &:hover {
+        background-color: $yellow-02;
+      }
+    }
+
+    img {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  header {
+    .container {
+      gap: 20px;
+      button {
+        width: 100%;
+        order: 3;
+        display:none;
+      }
+      
+      button.open{
+        display:block;
+        animation:menuClosed .5s ease-in forwards;
+      }
+
+      img {
+        display: block;
+      }
+      img.open {
+        animation:toggleMenu .5s alternate forwards;
+      }
+    }
+  }
+}
+
+
+@keyframes menuClosed {
+    from {
+      opacity:0;
+    }
+
+    to {
+      opacity:1;
+      display:block;
+    }
+}
+
+@keyframes toggleMenu {
+  from {
+    transform:rotate(0deg);
+  }
+
+  to {
+    transform:rotate(180deg);
+  }
+}
